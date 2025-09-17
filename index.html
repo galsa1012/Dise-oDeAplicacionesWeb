@@ -1,60 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+	Archivo principal HTML del proyecto web.
+	Se emplea estructura semántica y buenas prácticas de accesibilidad.
+-->
+<!DOCTYPE html> <!-- HTML5: estándar actual para páginas web -->
+<html lang="en"> <!-- El atributo lang facilita accesibilidad y SEO -->
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>My Web Project - WEB ATELIER (UDIT)</title>
-		<meta name="description" content="A student web project for WEB ATELIER (UDIT) course" />
-		<link rel="stylesheet" href="assets/css/style.css" />
+		<meta charset="UTF-8" /> <!-- Codificación universal, evita problemas con caracteres especiales -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Responsive: adapta la web a móviles y tablets -->
+		<title>My Web Project - WEB ATELIER (UDIT)</title> <!-- Título que aparece en la pestaña del navegador -->
+		<meta name="description" content="A student web project for WEB ATELIER (UDIT) course" /> <!-- Descripción para buscadores -->
+		<link rel="stylesheet" href="./assets/css/style.css" /> <!-- Enlaza la hoja de estilos principal -->
+		<!-- Sugerencia: Añade un favicon para mejorar la identidad visual -->
 	</head>
 	<body>
 		<a href="#main" class="skip-link">Skip to main content</a>
+		<!-- Enlace de salto para accesibilidad, permite a usuarios de teclado saltar directamente al contenido principal -->
 
 		<header>
 			<div class="container">
-				<h1>My Web Project</h1>
-				<p>Student Project - WEB ATELIER (UDIT)</p>
+				<h1>My Web Project</h1> <!-- Encabezado principal, importante para SEO y accesibilidad -->
+				<p>Student Project - WEB ATELIER (UDIT)</p> <!-- Breve descripción del proyecto -->
 			</div>
+			<!-- Sugerencia: Añade una barra de navegación si el proyecto crece -->
 		</header>
 
 		<main id="main" class="container">
+			<!-- El atributo id="main" permite que el enlace de salto funcione correctamente -->
 			<section>
-				<h2>Welcome</h2>
+				<h2>Welcome</h2> <!-- Encabezado de sección, mejora la estructura semántica -->
 				<p>
 					This is the starting point for my web project. I will build this incrementally, committing progress after each
 					class.
 				</p>
+				<!-- Sugerencia: Personaliza este mensaje para reflejar tu progreso real -->
 
-				<h3>Project Goals</h3>
+				<h3>Project Goals</h3> <!-- Subtítulo que introduce los objetivos del proyecto -->
 				<ul>
-					<li>Create a responsive, accessible website</li>
-					<li>Practice semantic HTML</li>
-					<li>Implement modern CSS techniques</li>
-					<li>Follow web accessibility guidelines</li>
+					<li>Create a responsive, accessible website</li> <!-- Objetivo: diseño adaptable y accesible -->
+					<li>Practice semantic HTML</li> <!-- Objetivo: usar etiquetas HTML con significado -->
+					<li>Implement modern CSS techniques</li> <!-- Objetivo: aplicar técnicas modernas de CSS -->
+					<li>Follow web accessibility guidelines</li> <!-- Objetivo: seguir buenas prácticas de accesibilidad -->
 				</ul>
+				<!-- Sugerencia: Si los objetivos tienen orden, usa <ol> en vez de <ul> -->
 			</section>
 
 			<section>
-				<h2>Weekly Progress</h2>
+				<h2>Weekly Progress</h2> <!-- Encabezado para mostrar avances semanales -->
 				<p>
 					Check my
 					<a href="https://github.com/[username]/[project-repo]/commits/main">commit history</a>
 					to see weekly progress.
 				</p>
+				<!-- Sugerencia: Personaliza el enlace con tu usuario y repositorio real -->
 			</section>
 		</main>
 
 		<footer>
 			<div class="container">
-				<p>© 2025 [Your Name] — WEB ATELIER (UDIT) · Web Design (2025 Fall).</p>
+				<p>© 2025 [Your Name] — WEB ATELIER (UDIT) · Web Design (2025 Fall).</p> <!-- Pie de página con créditos -->
 				<p>
 					<a href="https://github.com/ruvebal/web-atelier-udit">Course Framework</a>
 					·
 					<a href="project-brief.md">Project Brief</a>
 				</p>
+				<!-- Sugerencia: Añade enlaces a redes sociales o contacto si es relevante -->
 			</div>
 		</footer>
 
-		<script src="assets/js/main.js"></script>
+		<script src="assets/js/main.js"></script> <!-- Enlaza el archivo JS principal -->
+		<!-- Sugerencia: Usa el atributo 'defer' para cargar el JS después del HTML y mejorar el rendimiento -->
 	</body>
 </html>

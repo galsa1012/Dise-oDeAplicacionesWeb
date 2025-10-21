@@ -1,0 +1,243 @@
+/* ==============================
+   Estructura principal
+============================== */
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #161616;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Radio Canada Big", sans-serif;
+}
+
+main {
+  flex: 1;
+  margin-top: 80px; /* ajusta según la altura de tu header */
+}
+
+/* ==============================
+   Header y navegación
+============================== */
+header {
+  background: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+nav {
+  background-color: #161616;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+nav ul li {
+  margin-right: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #ececec;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  color: #d41b1b;
+  outline: none;
+}
+
+/* ==============================
+   Secciones
+============================== */
+section {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-bottom: 2rem; /* aumenta espacio entre secciones */
+  /* height eliminado para que se adapte al contenido */
+}
+
+.cover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+  background: #222;
+  color: #fff;
+  margin-bottom: 3rem;
+}
+
+.title {
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid currentColor;
+  animation: typing 2s steps(30, end) forwards,
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 53%;
+  }
+}
+
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.iframe-section {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==============================
+   Proyectos / Tarjetas
+============================== */
+.projects-section {
+  padding: 2rem 0;
+}
+
+.projects-section h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  gap: 1.5rem; /* espacio entre tarjetas */
+}
+
+.project-card {
+  background: none;
+  border-radius: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s ease;
+}
+
+.project-card:hover h3 {
+  color: #d41b1b;
+  font-size: 1.25rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.project-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.1);
+}
+
+.project-content {
+  padding: 1rem;
+}
+
+.project-content h3 {
+  margin: 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.project-content p {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag {
+  background: #007acc;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+}
+
+.full-width-card {
+  grid-column: 1 / -1;
+  background: none;
+
+  padding: 0;
+}
+/* ==============================
+   Footer
+============================== */
+footer {
+  background: rgba(34, 34, 34, 0.75);
+  text-align: center;
+  padding: 1rem;
+  margin: 0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+.content-container {
+  padding: 0 2rem; /* espacio a los lados solo del contenido */
+}
+
+h1 {
+  color: #ffffff; /* blanco */
+}
+
+h2 {
+  color: #ececec; /* amarillo */
+}
+
+h3 {
+  color: #ececec; /* azul claro */
+}
+
+/* Párrafos */
+p {
+  color: #ececec; /* gris claro */
+}
+/* ==============================
+   Responsividad
+============================== */
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

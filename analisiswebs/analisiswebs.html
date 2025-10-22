@@ -796,5 +796,68 @@
     <footer>
       <p>© 2025 Web Atelier (UDIT) - Informe de análisis.</p>
     </footer>
+    
+   <script>
+      (function () {
+        if ('ontouchstart' in window || navigator.maxTouchPoints > 0) return;
+
+        const DOTS = 12;
+        const SPEED = 0.18;
+        const container = document.body;
+
+        const dots = [];
+        for (let i = 0; i < DOTS; i++) {
+          const el = document.createElement('div');
+          el.className = 'cursor-trail-dot' + (i % 2 ? ' small' : '');
+          container.appendChild(el);
+          dots.push({ el, x: 0, y: 0 });
+        }
+
+        let mouseX = window.innerWidth / 2;
+        let mouseY = window.innerHeight / 2;
+        let lastMoveTime = Date.now();
+
+        window.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+          lastMoveTime = Date.now();
+        });
+
+        window.addEventListener('pointerleave', () => {
+          container.classList.add('cursor-trail-hidden');
+        });
+        window.addEventListener('pointerenter', () => {
+          container.classList.remove('cursor-trail-hidden');
+        });
+
+        function animate() {
+          let x = mouseX;
+          let y = mouseY;
+          for (let i = 0; i < dots.length; i++) {
+            const d = dots[i];
+            d.x += (x - d.x) * (SPEED + i * 0.005);
+            d.y += (y - d.y) * (SPEED + i * 0.005);
+            d.el.style.transform = `translate(${d.x}px, ${d.y}px) translate(-50%, -50%) scale(${1 - i * 0.03})`;
+            d.el.style.opacity = `${Math.max(0.05, 0.9 - i * 0.07)}`;
+            x = d.x;
+            y = d.y;
+          }
+          if (Date.now() - lastMoveTime > 3000) {
+            container.classList.add('cursor-trail-hidden');
+          } else {
+            container.classList.remove('cursor-trail-hidden');
+          }
+          requestAnimationFrame(animate);
+        }
+
+        requestAnimationFrame(animate);
+
+        window.addEventListener('keydown', (e) => {
+          if (e.key.toLowerCase() === 't') {
+            document.body.classList.toggle('no-cursor-trail');
+          }
+        });
+      })();
+    </script>
   </body>
 </html>

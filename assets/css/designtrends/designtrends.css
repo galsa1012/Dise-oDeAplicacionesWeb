@@ -99,11 +99,11 @@
 
         /* Chapter 2 - The Challenge */
         .chapter-2 {
-            background: linear-gradient(135deg, #c0392b, #8e44ad);
+            background: linear-gradient(135deg, #0b4415, #129b24);
         }
 
         .chapter-2 h2 {
-            color: #e74c3c;
+            color: #ffffff;
             font-size: clamp(2rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
         }
